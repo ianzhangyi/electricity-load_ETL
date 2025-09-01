@@ -28,31 +28,6 @@ In addition, it generates standardized **data quality reports** to ensure integr
   - Produces automated reports (coverage, anomalies, summary stats)  
   - Includes templates for Excel/Word output  
 
----
-## Repository Structure  
-
-electricity-load-etl/
-├── pjm/ # PJM reference data (NSPL, NITS, PLCScaling)
-│ ├── fetch_nspl.py
-│ ├── fetch_nits.py
-│ ├── fetch_plc_scaling.py
-│ └── ...
-├── utilities/ # ETL scripts for utilities’ websites
-│ ├── ohio_aep_loader.py
-│ ├── ohio_duke_loader.py
-│ ├── nj_pseg_loader.py
-│ └── ...
-├── reports/ # Data quality & summary report templates
-│ ├── qc_template.docx
-│ ├── daily_report.xlsx
-│ └── ...
-├── sql/ # Database table definitions & loaders
-│ ├── create_tables.sql
-│ └── load_etl_results.sql
-├── config/ # Configuration (db connection, schedule)
-│ └── config.yaml
-├── requirements.txt # Python dependencies
-└── README.md # Project documentation
 
 ## Workflow  
 
@@ -77,7 +52,16 @@ electricity-load-etl/
 
 ## Quickstart  
 
-### Install dependencies  
-```bash
-pip install -r requirements.txt
+Example: Run ETL for Ohio AEP
+python utilities/
+
+Example: Fetch PJM NSPL factors
+python pjm/nspl.py
+
+## Data Sources
+
+PJM Data Miner 2 – https://dataminer2.pjm.com
+
+Utility websites – AEP Ohio, Duke Ohio, PSEG NJ, etc.
+
 
