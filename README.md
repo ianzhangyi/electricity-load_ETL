@@ -54,7 +54,7 @@ In addition, it generates standardized **data quality reports** to ensure integr
 
 Example: Run ETL for Ohio AEP
 ```bash
-python utilities/aep_oh_etl.py+
+python utilities/aep_oh_etl.py
 ```
 Example: Fetch PJM NSPL factors
 ```bash
