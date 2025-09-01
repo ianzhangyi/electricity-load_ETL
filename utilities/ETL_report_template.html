@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ report_title }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        pre {
+            white-space: pre-wrap;
+            padding: 0;
+        }
+        .header-text {
+            font-size: 24px;
+            padding: 0;
+        }
+        .description-text {
+            font-size: 16px;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+        .sub-header {
+            font-size: 20px;
+            padding: 0;
+            margin-top: 20px;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+        .sub-sub-header {
+            font-size: 18px;
+            padding: 0;
+            margin-top: 10px;
+        }
+        img {
+            display: block;
+            padding: 0;
+            width: 100%;
+            max-width: 1000px;
+            margin-top: 10px;
+        }
+        .table-container {
+            margin-top: 10px;
+            text-align: left;  /* Ensure the table container aligns to the left */
+        }
+        table {
+            font-size: 14px;
+            border-collapse: collapse;
+            width: auto;
+            margin: 0;  /* Ensure the table aligns to the left */
+            border: 3px double black;  /* Double border for table */
+        }
+        table, th, td {
+            white-space: nowrap;
+            border: 1px double black;  /* Double border for cells */
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <pre class='header-text'>{{ report_title }}</pre>
+    <pre class='description-text'>{{ report_description }}</pre>
+
+    {% for section in sections %}
+        <pre class='sub-header'>{{ section.subtitle }}</pre>
+        <pre class='sub-sub-header'>Key Statistics</pre>
+        <div class="table-container">
+            {{ section.dataframe | safe }}
+        </div>
+        <pre><br><br><br></pre>  <!-- Add blank lines -->
+        <pre class='sub-sub-header'>Data Plot</pre>
+        <img src="{{ section.plot }}" alt="{{ section.subtitle }} Plot"><br><br>
+        <pre><br><br><br></pre>  <!-- Add blank lines -->
+    {% endfor %}
+</body>
+</html>
