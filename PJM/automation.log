@@ -1,0 +1,146 @@
+2024-08-07 10:12:48,297 - INFO - Starting ETL Process for 5coincidentpeaks
+2024-08-07 10:12:48,298 - INFO - Downloading Data from PJM Website
+2024-08-07 10:12:51,216 - INFO - Processing Data
+2024-08-07 10:12:51,217 - INFO - Processing 2019 data
+2024-08-07 10:12:51,876 - INFO - Processing 2020 data
+2024-08-07 10:12:52,484 - INFO - Processing 2021 data
+2024-08-07 10:12:53,114 - INFO - Processing 2022 data
+2024-08-07 10:12:54,010 - INFO - Processing 2023 data
+2024-08-07 10:12:54,661 - INFO - Checking Data
+2024-08-07 10:12:55,517 - INFO - Saving Data
+2024-08-07 10:12:55,524 - INFO - 5coincidentpeaks ETL Process Complete
+2024-08-07 10:13:13,484 - INFO - Starting ETL Process for BlackStart
+2024-08-07 10:13:13,486 - INFO - Downloading Data from PJM Website
+2024-08-07 10:13:17,772 - INFO - Processing Data
+2024-08-07 10:13:19,495 - INFO - Checking Data
+2024-08-07 10:13:19,537 - INFO - Saving Data
+2024-08-07 10:13:19,545 - INFO - BlackStart ETL Process Complete
+2024-08-07 10:13:26,561 - INFO - Starting ETL Process for NITS
+2024-08-07 10:13:26,562 - INFO - Downloading Data from PJM Website
+2024-08-07 10:13:29,178 - INFO - Processing Data
+2024-08-07 10:13:29,180 - INFO - Processing 2021 data
+2024-08-07 10:13:30,189 - INFO - Processing 2022 data
+2024-08-07 10:13:31,469 - INFO - Processing 2023 data
+2024-08-07 10:13:33,376 - INFO - Processing 2024 data
+2024-08-07 10:13:34,302 - INFO - Checking Data
+2024-08-07 10:13:34,947 - INFO - Saving Data
+2024-08-07 10:13:34,955 - INFO - NITS ETL Process Complete
+2024-08-07 10:13:41,953 - INFO - Starting ETL Process for NSPL
+2024-08-07 10:13:41,962 - INFO - Downloading Data from PJM Website
+2024-08-07 10:13:48,898 - INFO - Processing Data
+2024-08-07 10:13:48,898 - INFO - Processing 2024 data
+2024-08-07 10:13:49,038 - INFO - Processing 2023 data
+2024-08-07 10:13:49,186 - INFO - Processing 2022 data
+2024-08-07 10:13:49,294 - INFO - Processing 2021 data
+2024-08-07 10:13:49,426 - INFO - Processing 2020 data
+2024-08-07 10:13:49,553 - INFO - Processing 2019 data
+2024-08-07 10:13:49,696 - INFO - Processing 2018 data
+2024-08-07 10:13:49,832 - INFO - Processing 2017 data
+2024-08-07 10:13:49,980 - INFO - Processing 2016 data
+2024-08-07 10:13:50,813 - INFO - Checking Data
+2024-08-07 10:13:50,864 - INFO - Saving Data
+2024-08-07 10:13:50,872 - INFO - NSPL ETL Process Complete
+2024-08-07 10:13:57,373 - INFO - Starting ETL Process for PLCScaling
+2024-08-07 10:13:57,382 - INFO - Downloading Data from PJM Website
+2024-08-07 10:14:11,521 - INFO - Processing Data
+2024-08-07 10:14:11,521 - INFO - Processing 2013 data
+2024-08-07 10:14:14,008 - INFO - Processing 2014 data
+2024-08-07 10:14:16,330 - INFO - Processing 2015 data
+2024-08-07 10:14:19,035 - INFO - Processing 2016 data
+2024-08-07 10:14:21,560 - INFO - Processing 2017 data
+2024-08-07 10:14:25,056 - INFO - Processing 2018 data
+2024-08-07 10:14:28,954 - INFO - Processing 2019 data
+2024-08-07 10:14:34,048 - INFO - Processing 2020 data
+2024-08-07 10:14:38,761 - INFO - Processing 2021 data
+2024-08-07 10:14:43,342 - INFO - Processing 2022 data
+2024-08-07 10:14:48,171 - INFO - Processing 2023 data
+2024-08-07 10:14:52,552 - INFO - Processing 2024 data
+2024-08-07 10:15:02,485 - INFO - Checking Data
+2024-08-07 10:15:02,741 - ERROR - An error occurred: 'FlowMonth'
+Traceback (most recent call last):
+  File "C:\Users\5DIntern3_2024\anaconda3\envs\pjm_environment\lib\site-packages\pandas\core\indexes\base.py", line 3652, in get_loc
+    return self._engine.get_loc(casted_key)
+  File "pandas\_libs\index.pyx", line 147, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\index.pyx", line 176, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 7080, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'FlowMonth'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\5DIntern3_2024\Work\PJM\PLCScaling.py", line 294, in main
+    if pd.to_datetime(df_update['FlowMonth']).min() <= pd.to_datetime(df_database['FlowMonth']).max():
+  File "C:\Users\5DIntern3_2024\anaconda3\envs\pjm_environment\lib\site-packages\pandas\core\frame.py", line 3761, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "C:\Users\5DIntern3_2024\anaconda3\envs\pjm_environment\lib\site-packages\pandas\core\indexes\base.py", line 3654, in get_loc
+    raise KeyError(key) from err
+KeyError: 'FlowMonth'
+2024-08-07 10:15:02,759 - INFO - PLCScaling ETL Process Complete
+2024-08-07 10:15:08,455 - INFO - Starting ETL Process for ReactiveRevenueRequirements
+2024-08-07 10:15:08,463 - INFO - Downloading Data from PJM Website
+2024-08-07 10:15:13,271 - INFO - Processing Data
+2024-08-07 10:15:14,229 - INFO - Checking Data
+2024-08-07 10:15:14,258 - INFO - Saving Data
+2024-08-07 10:15:14,265 - INFO - ReactiveRevenueRequirements_data ETL Process Complete
+2024-08-07 10:17:01,209 - INFO - Starting ETL Process for PLCScaling
+2024-08-07 10:17:01,209 - INFO - Downloading Data from PJM Website
+2024-08-07 10:17:17,756 - INFO - Processing Data
+2024-08-07 10:17:17,756 - INFO - Processing 2013 data
+2024-08-07 10:17:20,291 - INFO - Processing 2014 data
+2024-08-07 10:17:22,711 - INFO - Processing 2015 data
+2024-08-07 10:17:25,528 - INFO - Processing 2016 data
+2024-08-07 10:17:28,169 - INFO - Processing 2017 data
+2024-08-07 10:17:31,663 - INFO - Processing 2018 data
+2024-08-07 10:17:35,058 - INFO - Processing 2019 data
+2024-08-07 10:17:40,388 - INFO - Processing 2020 data
+2024-08-07 10:17:45,683 - INFO - Processing 2021 data
+2024-08-07 10:17:51,471 - INFO - Processing 2022 data
+2024-08-07 10:17:56,541 - INFO - Processing 2023 data
+2024-08-07 10:18:01,039 - INFO - Processing 2024 data
+2024-08-07 10:18:11,352 - INFO - Checking Data
+2024-08-07 10:18:11,643 - ERROR - An error occurred: 'FlowMonth'
+Traceback (most recent call last):
+  File "C:\Users\5DIntern3_2024\anaconda3\envs\pjm_environment\lib\site-packages\pandas\core\indexes\base.py", line 3652, in get_loc
+    return self._engine.get_loc(casted_key)
+  File "pandas\_libs\index.pyx", line 147, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\index.pyx", line 176, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 7080, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'FlowMonth'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\5DIntern3_2024\Work\PJM\PLCScaling.py", line 294, in main
+    if pd.to_datetime(df_update['FlowMonth']).min() <= pd.to_datetime(df_database['FlowMonth']).max():
+  File "C:\Users\5DIntern3_2024\anaconda3\envs\pjm_environment\lib\site-packages\pandas\core\frame.py", line 3761, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "C:\Users\5DIntern3_2024\anaconda3\envs\pjm_environment\lib\site-packages\pandas\core\indexes\base.py", line 3654, in get_loc
+    raise KeyError(key) from err
+KeyError: 'FlowMonth'
+2024-08-07 10:18:11,659 - INFO - PLCScaling ETL Process Complete
+2024-08-07 10:19:29,682 - INFO - Starting ETL Process for PLCScaling
+2024-08-07 10:19:29,682 - INFO - Downloading Data from PJM Website
+2024-08-07 10:19:41,543 - INFO - Processing Data
+2024-08-07 10:19:41,543 - INFO - Processing 2013 data
+2024-08-07 10:19:44,633 - INFO - Processing 2014 data
+2024-08-07 10:19:47,079 - INFO - Processing 2015 data
+2024-08-07 10:19:49,932 - INFO - Processing 2016 data
+2024-08-07 10:19:52,638 - INFO - Processing 2017 data
+2024-08-07 10:19:56,267 - INFO - Processing 2018 data
+2024-08-07 10:20:00,053 - INFO - Processing 2019 data
+2024-08-07 10:20:05,083 - INFO - Processing 2020 data
+2024-08-07 10:20:10,072 - INFO - Processing 2021 data
+2024-08-07 10:20:14,972 - INFO - Processing 2022 data
+2024-08-07 10:20:20,052 - INFO - Processing 2023 data
+2024-08-07 10:20:24,760 - INFO - Processing 2024 data
+2024-08-07 10:20:35,102 - INFO - Checking Data
+2024-08-07 10:20:35,415 - INFO - Saving Data
+2024-08-07 10:20:35,639 - INFO - PLCScaling ETL Process Complete
+2024-08-07 10:40:42,338 - INFO - Starting ETL Process for BlackStart
+2024-08-07 10:40:42,339 - INFO - Downloading Data from PJM Website
+2024-08-07 10:40:51,638 - INFO - Processing Data
+2024-08-07 10:40:53,381 - INFO - Checking Data
+2024-08-07 10:40:53,416 - INFO - Saving Data
+2024-08-07 10:40:53,425 - INFO - BlackStart ETL Process Complete
